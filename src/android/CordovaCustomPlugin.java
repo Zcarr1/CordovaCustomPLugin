@@ -27,7 +27,8 @@ public class CordovaCustomPlugin extends CordovaPlugin {
 
         if (num1 != null && num2 != null) {
             double res = Operations.sum(num1, num2);
-            callbackContext.success(res);
+            String sRes = String.valueOf(res);
+            callbackContext.success(sRes);
         } else {
             callbackContext.error("Expected one non-empty string argument.");
         }
