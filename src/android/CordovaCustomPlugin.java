@@ -17,16 +17,15 @@ public class CordovaCustomPlugin extends CordovaPlugin {
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if (action.equals("sum")) {
-            this.sum(args, callbackContext);
+            double num1 = args.getDouble(0);
+            double num2 = args.getDouble(1);
+            this.sum(num1, num2, callbackContext);
             return true;
         }
         return false;
     }
 
-    private void sum(JSONArray args, CallbackContext callbackContext) {
-        Double num1 = args.getDouble(0);
-        Double num2 = args.getDouble(1);
-
+    private void sum(Double num1, Double num2, CallbackContext callbackContext) {
         if (num1 != null && num2 != null) {
             double res = Operations.sum(num1, num2);
             String sRes = String.valueOf(res);
