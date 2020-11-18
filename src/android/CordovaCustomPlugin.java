@@ -22,8 +22,8 @@ public class CordovaCustomPlugin extends CordovaPlugin {
     }
 
     private void sum(JSONArray args, CallbackContext callbackContext) {
-        double num1 = args.getDouble(0);
-        double num2 = args.getDouble(1);
+        Double num1 = args.getDouble(0);
+        Double num2 = args.getDouble(1);
 
         if (num1 != null && num2 != null) {
             double res = Operations.sum(num1, num2);
